@@ -1,0 +1,90 @@
+import { Job } from "@/types";
+
+export const jobsMock: Job[] = [
+  {
+    id: "1",
+    slug: "software-engineer-senior",
+    title: "Senior Software Engineer",
+    profileDescription:
+      "Seeking a senior software engineer with expertise in backend development.",
+    organizationName: "Tech Solutions Inc.",
+    recruiterName: "Juan Pérez",
+    salaryRangeMin: 2500,
+    salaryRangeMax: 4500,
+    salaryCurrency: "USD",
+    employmentType: "Dependency",
+    technicalRequirements: [
+      { name: "Node.js", isRequired: true, experienceYears: 3 },
+      { name: "TypeScript", isRequired: true, experienceYears: 2 },
+      { name: "AWS", isRequired: false, experienceYears: 1 },
+    ],
+    experienceYears: 5,
+    isEnglishRequired: true,
+    englishLevel: "B2",
+    roleDefinition:
+      "You will be responsible for building and scaling backend services.",
+    clientDefinition:
+      "The role involves direct interaction with international clients.",
+    benefits: "Health insurance, remote work, and flexible hours.",
+    selectionProcess: "Technical interview, code challenge, and HR interview.",
+    isRemote: true,
+    location: "Remote",
+  },
+  {
+    id: "2",
+    slug: "frontend-developer-mid",
+    title: "Mid-level Frontend Developer",
+    profileDescription: "Looking for a frontend developer proficient in React.",
+    organizationName: "Creative Minds",
+    recruiterName: "Ana García",
+    salaryRangeMin: 1800,
+    salaryRangeMax: 3000,
+    salaryCurrency: "ARS",
+    employmentType: "Freelance",
+    technicalRequirements: [
+      { name: "React", isRequired: true, experienceYears: 2 },
+      { name: "CSS", isRequired: true, experienceYears: 3 },
+      { name: "GraphQL", isRequired: false, experienceYears: 1 },
+    ],
+    experienceYears: 3,
+    isEnglishRequired: false,
+    englishLevel: "A2",
+    roleDefinition:
+      "Develop and maintain web applications with a focus on UI/UX.",
+    clientDefinition: "Work on projects for local businesses.",
+    benefits: "Remote work, flexible schedule.",
+    selectionProcess: "Portfolio review and technical interview.",
+    isRemote: true,
+    location: "Buenos Aires, Argentina",
+  },
+  {
+    id: "3",
+    slug: "devops-engineer",
+    title: "DevOps Engineer",
+    profileDescription:
+      "Experienced DevOps engineer to manage cloud infrastructure and CI/CD pipelines.",
+    organizationName: "Cloud Innovators",
+    recruiterName: "Carlos González",
+    salaryRangeMin: 3500,
+    salaryRangeMax: 6000,
+    salaryCurrency: "USD",
+    employmentType: "Contractor",
+    technicalRequirements: [
+      { name: "Kubernetes", isRequired: true, experienceYears: 3 },
+      { name: "Docker", isRequired: true, experienceYears: 2 },
+      { name: "CI/CD", isRequired: true, experienceYears: 2 },
+      { name: "Python", isRequired: false, experienceYears: 1 },
+    ],
+    experienceYears: 4,
+    isEnglishRequired: true,
+    englishLevel: "C1",
+    roleDefinition:
+      "You will be responsible for managing and automating cloud infrastructure.",
+    clientDefinition:
+      "International clients requiring scalable infrastructure solutions.",
+    benefits: "Flexible hours, high-growth environment.",
+    selectionProcess: "Technical interview, infrastructure challenge.",
+    isRemote: false,
+    location: "New York, USA",
+  },
+];

@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String  @unique
+  isRecruiter Boolean @default(false)
+  jobs        Job[]
+}
+
+model Organization {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  jobs Job[]
+}
+
+model Job {
+  id                    String                 @id @default(auto()) @map("_id") @db.ObjectId
+  slug                  String                 @unique
+  title                 String
+  profileDescription    String
+  roleDefinition        String
+  clientDefinition      String
+  benefits              String
+  selectionProcess      String
+  isRemote              Boolean                @default(true)
+  location              String?
+  organization          Organization?          @relation(fields: [organizationId], references: [id])
+  organizationId        String?                @db.ObjectId
+  recruiter             User?                  @relation(fields: [recruiterId], references: [id])
+  recruiterId           String?                @db.ObjectId
+  salaryRange           SalaryRange
+  salaryCurrency        SalaryCurrency         @default(ARS)
+  employmentType        EmploymentType         @default(Dependency)
+  technicalRequirements TechnicalRequirement[]
+  isEnglishRequired     Boolean
+
+  englishLevel    EnglishLevel?
+  experienceYears Int
+  createdAt       DateTime      @default(now())
+}
+
+type SalaryRange {
+  min Int
+  max Int
+}
+
+enum SalaryCurrency {
+  ARS
+  USD
+}
+
+enum EmploymentType {
+  Dependency
+  Contractor
+  Freelance
+}
+
+type TechnicalRequirement {
+  name            String
+  isRequired      Boolean
+  experienceYears Int
+}
+
+enum EnglishLevel {
+  A2
+  B1
+  B2
+  C1
+  C2
+}
