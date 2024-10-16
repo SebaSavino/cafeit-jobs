@@ -1,4 +1,4 @@
-import { CreateJobDTO, Job, JobsRepository } from "@/types";
+import { Job, JobsRepository } from "@/types";
 import { jobsMock } from "./mocks/jobs.mock";
 
 export class JobsMockRepository implements JobsRepository {
@@ -8,7 +8,7 @@ export class JobsMockRepository implements JobsRepository {
     return this._jobs;
   }
 
-  create(dto: CreateJobDTO): Promise<Job> {
+  create(): Promise<Job> {
     throw new Error("Method not implemented.");
   }
 }

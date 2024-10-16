@@ -1,4 +1,4 @@
-import { JobsRepository, CreateJobDTO, Job } from "@/types";
+import { JobsRepository, Job } from "@/types";
 import { prisma } from "@/utils/prisma";
 import { JobsMapper } from "./mappers/jobs.mapper";
 
@@ -18,7 +18,7 @@ export class JobsPrismaRepository implements JobsRepository {
 
     return jobs.map(this._mapper.fromPrismaToEntity);
   }
-  create(dto: CreateJobDTO): Promise<Job> {
+  create(): Promise<Job> {
     throw new Error("Method not implemented.");
   }
 }
